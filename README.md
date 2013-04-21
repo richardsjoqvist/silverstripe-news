@@ -15,7 +15,7 @@ To get news entries outside the module you can use the provided NewsHelper::Entr
 			$itemToSkip = 0;
 			$itemsToReturn = 5;
 			$namespace = "news";
-			return NewsHolder::Entries($itemsToSkip, $itemToReturn, $namespace);
+			return NewsHelper::Entries($itemsToSkip, $itemToReturn, $namespace);
 		}
 	}
 
@@ -32,7 +32,7 @@ It is also possible to list items from several selected namespaces by separating
 			$itemToSkip = 0;
 			$itemsToReturn = 5;
 			$namespace = "news,press";
-			return NewsHolder::Entries($itemsToSkip, $itemToReturn, $namespace);
+			return NewsHelper::Entries($itemsToSkip, $itemToReturn, $namespace);
 		}
 	}
 
