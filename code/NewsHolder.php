@@ -13,8 +13,8 @@ class NewsHolder extends Page {
 	
 	function getCMSFields() {
 		$fields = parent::getCMSFields();
-		$fields->addFieldToTab("Root.Content.Config", new TextField("RSSTitle", _t("NewsHolder.RSSFEED", "News RSS feed")));
-		$fields->addFieldToTab("Root.Content.Config", new TextField("Namespace", _t("NewsHolder.NAMESPACE", "News namespace")));
+		$fields->addFieldToTab("Root.Config", new TextField("RSSTitle", _t("NewsHolder.RSSFEED", "News RSS feed")));
+		$fields->addFieldToTab("Root.Config", new TextField("Namespace", _t("NewsHolder.NAMESPACE", "News namespace")));
 		return $fields;
 	}
 
