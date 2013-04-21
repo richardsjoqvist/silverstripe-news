@@ -1,0 +1,11 @@
+dk:
+  NewsHolder:
+    RSSFEED: 'Nyheder RSS feed'
+    NAMESPACE: 'Nyheder namespace'
+    SUCCONTENT: 'Tillykke, SilverStripe news modul er installeret succesfuldt. Dette nyheds indlæg kan du trygt slette.'
+    SUCTITLE: 'SilverStripe News modul installeret succesfuldt'
+    NOENTRIES: 'Der er ingen nyhed indlæg'
+  NewsItem:
+    CN: 'Indhold'     
+    DT: 'Dato'     
+    DATEFORMAT: 'Y-m-d'     

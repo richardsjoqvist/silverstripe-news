@@ -1,0 +1,11 @@
+en:
+  NewsHolder:
+    RSSFEED: 'News RSS feed'
+    NAMESPACE: 'News namespace'
+    SUCCONTENT: 'Congratulations, the SilverStripe news module has been successfully installed. This news entry can be safely deleted.'
+    SUCTITLE: 'SilverStripe news module successfully installed'
+    NOENTRIES: 'There are no news items'
+  NewsItem:
+    CN: 'Content'
+    DT: 'Date'
+    DATEFORMAT: 'Y-m-d'

@@ -1,0 +1,11 @@
+sv:
+  NewsHolder:
+    RSSFEED: 'Nyheter som RSS-feed'
+    NAMESPACE: 'Nyheter namespace'
+    SUCCONTENT: 'Gratulerar! Nyhets-modulen har installerats. Du kan nu ta bort denna nyhet.'
+    SUCTITLE: 'Nyhets-modulen har installerats'
+    NOENTRIES: 'Det finns inga nyheter'
+  NewsItem:
+    CN: 'Innehåll'
+    DT: 'Datum'
+    DATEFORMAT: 'Y-m-d'
