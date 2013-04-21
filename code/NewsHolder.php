@@ -55,7 +55,7 @@ class NewsHolder_Controller extends Page_Controller {
 		parent::init();
 		
 		// Create a <link> tag point to the RSS feed
-		RSSFeed::linkToFeed($this->Link() . "rss", _t('NewsHolder.RSSFEED',$this->RSSTitle));
+		RSSFeed::linkToFeed('http://'.$_SERVER['HTTP_HOST'].$this->Link() . "rss", $this->RSSTitle);
 	}
 
 	/**
@@ -86,8 +86,9 @@ class NewsHolder_Controller extends Page_Controller {
 		}
 
 		if($entries = NewsHelper::Entries(0, 20, $namespace)) {
-			$rss = new RSSFeed($entries, $this->Link(), $this->RSSTitle, "", "Title", "ParsedContent");
-			$rss->outputToBrowser();
+			$rss = new RSSFeed($entries, 'http://'.$_SERVER['HTTP_HOST'].$this->Link(), $this->RSSTitle);
+			$xml = $rss->outputToBrowser();
+			return utf8_decode($xml);
 		}
 	}
 	
