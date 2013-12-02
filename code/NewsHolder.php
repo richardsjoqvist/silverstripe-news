@@ -4,9 +4,9 @@
  */
 class NewsHolder extends Page {
 	
-	static $icon = "news/images/newsholder";
+	private static $icon = "silverstripe-news/images/newsholder";
 	
-	static $db = array(
+	private static $db = array(
 		"RSSTitle" => "Text",
 		"Namespace" => "Text",
 	);
@@ -43,7 +43,7 @@ class NewsHolder extends Page {
 			$newsItem->write();
 			$newsItem->publish("Stage", "Live");
 			
-			Database::alteration_message("News item created","created");
+			DB::alteration_message("News item created","created");
 		}
 	}
 

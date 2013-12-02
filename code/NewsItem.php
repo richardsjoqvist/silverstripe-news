@@ -3,16 +3,16 @@
  * News item
  */
 class NewsItem extends Page {
+
+	private static $default_parent = 'NewsHolder';
 	
-	static $default_parent = 'NewsHolder';
+	private static $icon = "silverstripe-news/images/newsitem";
 	
-	static $icon = "news/images/newsitem";
-	
-	static $db = array(
+	private static $db = array(
 		"Date" => "SS_Datetime",
 	);
 	
-	static $defaults = array(
+	private static $defaults = array(
 		"ProvideComments" => false,
 		'ShowInMenus' => false
 	);

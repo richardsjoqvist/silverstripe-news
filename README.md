@@ -4,7 +4,7 @@ A simple news module for SilverStripe
 
 ## Requirements
 
-* SilverStripe 3.0
+* SilverStripe 3.1
 
 ## Usage
 
