@@ -8,13 +8,14 @@ A simple news module for SilverStripe
 
 ## Usage
 
-To get news entries outside the module you can use the provided NewsHelper::Entries() static method:
+To get news entries you can use the static method `NewsHelper::Entries()`:
 
-	class Page_Controller extends ContentController {
+	class Page_Controller extends ContentController
+	{
 		function LatestNews() {
 			$itemToSkip = 0;
 			$itemsToReturn = 5;
-			$namespace = "news";
+			$namespace = 'news';
 			return NewsHelper::Entries($itemsToSkip, $itemToReturn, $namespace);
 		}
 	}
@@ -24,14 +25,15 @@ news content. For instance you might want a news section with general news, one 
 section with financial news. In that case the general news section might have the namespace "news", press releases might
 be called "press" and the financial section could have the namespace "financial".
 
-If you leave the third parameter empty the NewsHelper::Entries() method will return items regardless of the namespace.
+If you omit the third parameter the `NewsHelper::Entries()` method will return items regardless of the namespace.
 It is also possible to list items from several selected namespaces by separating them with a comma:
 
-	class Page_Controller extends ContentController {
+	class Page_Controller extends ContentController
+	{
 		function LatestNews() {
 			$itemToSkip = 0;
 			$itemsToReturn = 5;
-			$namespace = "news,press";
+			$namespace = 'news,press';
 			return NewsHelper::Entries($itemsToSkip, $itemToReturn, $namespace);
 		}
 	}
@@ -39,10 +41,14 @@ It is also possible to list items from several selected namespaces by separating
 ## RSS
 
 The news module produces an RSS feed that can be accessed by pointing to the NewsHolder's URL segment and adding /rss at
-the end, like so: `www.domain.com/news/rss`
+the end. You may also provide additional parameters to control which namespaces entries should be returned from as well
+as limit and the number of items to skip.
 
-This only displays the NewsItems in that specific NewsHolder's namespace (in the case above, "news").
+Format: `http://www.domain.com/news/rss/[namespace(s)]/[limit],[skip]`
 
-To display NewsItems from selected NewsHolders you can call rss with namespaces, like so: `www.domain.com/news/news,press`
-
-To display NewsItems from all NewsHolders regardless of namespace, use "*" as namespace, like so: `www.domain.com/news/*`
+* [namespace(s)] can contain one or more namespaces separated with a comma;  `http://www.domain.com/news/rss/news,press/`
+* [limit] and [skip] must both be integer values.
+* If you do not provide the [skip] argument, a default of 0 is used
+* If you do not provide the [limit] argument, a default of 20 is used
+* If you do not provide the [namespace(s)] argument, the namespace of the called newsholder will be used
+* You may provide a wildcard as [namespace(s)] to display entries from all namesspaces; `http://www.domain.com/news/rss/*/`

@@ -2,23 +2,24 @@
 /**
  * News item
  */
-class NewsItem extends Page {
+class NewsItem extends Page
+{
 
 	private static $default_parent = 'NewsHolder';
 	
-	private static $icon = "silverstripe-news/images/newsitem";
+	private static $icon = 'silverstripe-news/images/newsitem';
 	
 	private static $db = array(
-		"Date" => "SS_Datetime",
+		'Date' => 'SS_Datetime',
 	);
 	
 	private static $defaults = array(
-		"ProvideComments" => false,
+		'ProvideComments' => false,
 		'ShowInMenus' => false
 	);
 	
 	/**
-	 * Use todays date as default
+	 * Use current date as default
 	 */
 	public function populateDefaults(){
 		parent::populateDefaults();
@@ -34,19 +35,18 @@ class NewsItem extends Page {
 
 }
 
-class NewsItem_Controller extends Page_Controller {
+class NewsItem_Controller extends Page_Controller
+{
+
+	private static $allowed_actions = array('rss');
 
 	/**
 	 * Handle RSS requests
-	 *
-	 * @param SS_HTTPRequest $request
 	 */
-	function rss($request=null) {
-		$bt = defined('DB::USE_ANSI_SQL') ? "\"" : "`";
-		if($r = DataObject::get_one("NewsHolder","{$bt}NewsHolder_Live{$bt}.{$bt}ID{$bt} = '{$this->ParentID}'")) {
-			$this->redirect($r->URLSegment, 302);
+	function rss() {
+		if($page = DataObject::get_by_id('NewsHolder',$this->ParentID)) {
+			$this->redirect($page->Link().'rss', 302);
 		}
-		exit;
 	}
 
 }
