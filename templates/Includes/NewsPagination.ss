@@ -1,12 +1,12 @@
-<% if NewsItems.MoreThanOnePage %>
+<% if NewsItemsPaginated.MoreThanOnePage %>
 	<div id="PageNumbers">
 		<p>
-			<% if NewsItems.NotFirstPage %>
-				<a class="prev" href="$NewsItems.PrevLink" title="View the previous page">Prev</a>
+			<% if NewsItemsPaginated.NotFirstPage %>
+				<a class="prev" href="$NewsItemsPaginated.PrevLink" title="View the previous page">Prev</a>
 			<% end_if %>
 		
 			<span>
-		    	<% loop NewsItems.PaginationSummary(4) %>
+		    	<% loop NewsItemsPaginated.PaginationSummary(4) %>
 					<% if CurrentBool %>
 						$PageNum
 					<% else %>
@@ -19,8 +19,8 @@
 				<% end_loop %>
 			</span>
 		
-			<% if NewsItems.NotLastPage %>
-				<a class="next" href="$NewsItems.NextLink" title="View the next page">Next</a>
+			<% if NewsItemsPaginated.NotLastPage %>
+				<a class="next" href="$NewsItemsPaginated.NextLink" title="View the next page">Next</a>
 			<% end_if %>
 		</p>
 	</div>
