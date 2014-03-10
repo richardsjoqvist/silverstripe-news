@@ -9,3 +9,9 @@ dk:
     CN: 'Indhold'     
     DT: 'Dato'     
     DATEFORMAT: 'Y-m-d'     
+  NewsItemsPaginated:
+    VIEWPREV: 'Se den forrige side'
+    PREV: 'Forrige'
+    VIEWPAGE: 'Se side'
+    VIEWNEXT: 'Se næste side'
+    NEXT: 'Næste'

@@ -9,3 +9,9 @@ sv:
     CN: 'Innehåll'
     DT: 'Datum'
     DATEFORMAT: 'Y-m-d'
+  NewsItemsPaginated:
+    VIEWPREV: 'Visa föregående sida'
+    PREV: 'Föregående'
+    VIEWPAGE: 'Visa sida'
+    VIEWNEXT: 'Visa nästa sida'
+    NEXT: 'Nästa'
