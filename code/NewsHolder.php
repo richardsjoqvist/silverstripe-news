@@ -62,7 +62,7 @@ class NewsHolder_Controller extends Page_Controller
 	}
 
 	/**
-	 * Get new items connected to this news holder
+	 * Get items connected to this news holder
 	 *
 	 * @param int $limit
 	 * @return DataList
@@ -73,17 +73,19 @@ class NewsHolder_Controller extends Page_Controller
 	}
 
 	/**
-	/**
-	 * Returns NewsItems paginated
-	 * @param integer $limit    amount of news items
-	 * @param integer $per_page news items per page
+	 * Get items connected to this news holder paginated
+	 *
+	 * @param int $limit  Amount of items
+	 * @param int $per_page  Items per page
 	 */
-	function NewsItemsPaginated($limit = 999, $per_page = 10) {
+	function NewsItemsPaginated($limit=999, $per_page=10) {
 		$news = $this->NewsItems($limit);
 		$items = new PaginatedList($news, $this->request);
 		$items->setPageLength($per_page);
 		return $items;
 	}
+
+	/**
 	 * Output the RSS feed for items connected to the requested news holder
 	 *
 	 * @param SS_HTTPRequest $request
