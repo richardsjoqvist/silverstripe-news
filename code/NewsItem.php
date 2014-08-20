@@ -43,7 +43,7 @@ class NewsItem_Controller extends Page_Controller
 	/**
 	 * Handle RSS requests
 	 */
-	function rss() {
+	function rss($request = NULL) {
 		if($page = DataObject::get_by_id('NewsHolder',$this->ParentID)) {
 			$this->redirect($page->Link().'rss', 302);
 		}
